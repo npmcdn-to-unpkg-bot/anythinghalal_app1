@@ -2,6 +2,7 @@ var express = require('express')
 var router = express.Router()
 var userController = require('../controllers/userController')
 var signInUpController = require('../controllers/signInUpController')
+var listingController = require('../controllers/listingController')
 
 router.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*')
@@ -23,6 +24,13 @@ router.get('/users', userController.getAllUsers)
 // ROUTING END POINTS TO THE APPROPRIATE FUNCTIONS
 router.post('/signup', signInUpController.signUp)
 router.post('/signin', signInUpController.signIn)
+
+// Keep project routes in a seperate controller file
+router.get('/listings', listingController.index)
+router.get('/listings/:id', listingController.show)
+router.put('/listings/:id', listingController.update)
+router.post('/listings', listingController.create)
+router.delete('listing/:id', listingController.remove)
 
 // Error handling
 router.get('/err', function (req, res, next) {

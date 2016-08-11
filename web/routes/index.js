@@ -1,6 +1,8 @@
 var express = require('express')
 var router = express.Router()
-var signInUpController = require('../../controllers/signInUpController')
+
+var userController = require('../../api/controllers/userController')
+var signInUpController = require('../../api/controllers/signInUpController')
 
 router.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*')
@@ -17,6 +19,8 @@ router.get('/', function (req, res, next) {
 router.get('/login', function (req, res) {
   res.render('login')
 })
+
+router.get('/users', userController.getAllUsers)
 
 // ROUTING END POINTS TO THE APPROPRIATE FUNCTIONS
 router.post('/signup', signInUpController.signUp)

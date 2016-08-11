@@ -1,4 +1,4 @@
-const User = require('../models/user')
+var User = require('../models/user')
 
 function userLoggedIn (req, res, next) {
   const userEmail = req.get('User-Email')
