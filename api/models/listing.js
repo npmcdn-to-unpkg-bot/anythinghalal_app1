@@ -25,7 +25,7 @@ var ListingSchema = new Schema({
 })
 
 ListingSchema.pre('save', function (next) {
-  let now = new Date()
+  var now = new Date()
   this.updated_at = now
   if (!this.created_at) {
     this.created_at = now
