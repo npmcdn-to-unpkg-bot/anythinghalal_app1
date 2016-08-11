@@ -2,13 +2,13 @@
 // console.clear()
 console.log('App.js is loaded')
 // global $
-var serverURL = 'https://anything-halal.herokuapp.com//'
+var serverURL = 'https://anything-halal.herokuapp.com/api/'
 var currentUser = window.localStorage.email || undefined
 
 function signin (formData) {
   $.ajax({
-    type: 'GET',
-    url: serverURL + 'users',
+    type: 'POST',
+    url: serverURL + 'signin',
     data: formData,
     success: function (response) {
       window.alert(response)
@@ -19,7 +19,7 @@ function signin (formData) {
       window.localStorage.email = $('#inputEmail2').val()
       window.localStorage.auth_token = response.user.auth_token
       // then redirect
-      window.location.href = './'
+      window.location.href = '/'
     },
     error: function (xhr, ajaxOptions, thrownError) {
       // else output error
@@ -51,13 +51,16 @@ $(function () {
     // window.locationStorage.removeItem('id')
     window.localStorage.removeItem('email')
     window.localStorage.removeItem('auth_token')
-    window.location.href = '/index.html'
+    window.localStorage.removeItem('auth_token')
+    window.localStorage.removeItem('id')
+    window.localStorage.removeItem('lsid')
+    window.location.href = '/'
   })
 
   console.log(currentUser)
-  // if (currentUser !== undefined) $('#sign-in, #sign-up').remove()
-  // if (currentUser === undefined) $('#logout, #add-article').remove()
-  // $('#hello-user a').html('Hello, ' + currentUser)
+  if (currentUser !== undefined || '') $('#sign-in').remove()
+  if (currentUser === undefined || '') $('#logout').remove()
+  $('#hello-user a').html('Hello, ' + currentUser)
   // $('#user-name').html('Welcome ' + window.localStorage.email)
   // $('#user-stats').html('Your auth_token: ' + window.localStorage.auth_token)
 })
