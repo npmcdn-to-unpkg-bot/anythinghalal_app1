@@ -8,13 +8,16 @@ function listListings (req, res) {
     for (var i = 0; i < listingsArray.length; ++i) {
       simplifiedList.push(
                         { id: listingsArray[i].id,
-                          title: listingsArray[i].name,
+                          name: listingsArray[i].name,
                           url: listingsArray[i].url,
-                          location: listingsArray[i].location,
+                          longitude: listingsArray[i].longitude,
+                          latitude: listingsArray[i].latitude,
                           featured_image: listingsArray[i].featured_image,
                           description: listingsArray[i].description,
                           categories: listingsArray[i].categories,
-                          contact: listingsArray[i].contact,
+                          address: listingsArray[i].address,
+                          tel: listingsArray[i].tel,
+                          website: listingsArray[i].website,
                           created_by: listingsArray[i].created_by,
                           created_at: listingsArray[i].created_at,
                           updated_at: listingsArray[i].updated_at

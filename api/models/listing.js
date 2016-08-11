@@ -4,22 +4,14 @@ var Schema = mongoose.Schema
 var ListingSchema = new Schema({
   name: String,
   url: String,
-  location: {
-    address: String,
-    locality: String,
-    city: String,
-    latitude: String,
-    longitude: String,
-    zipcode: String
-  },
+  latitude: String,
+  longitude: String,
   featured_image: String,
   description: String,
   categories: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Category' }],
-  contact: {
-    address: String,
-    tel: String,
-    website: String
-  },
+  address: String,
+  tel: String,
+  website: String,
   created_by: { type: String, ref: 'User' },
   created_at: Date,
   updated_at: Date

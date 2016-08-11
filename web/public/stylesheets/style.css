@@ -3,6 +3,7 @@
 body {
   font: 14px "Montserrat", Helvetica, Arial, sans-serif;
   color: #88998A;
+  background-color: #F8F8F8;
 }
 
 .navbar-brand {
@@ -155,6 +156,26 @@ h1, .h1 {
 
 #user-login-small {
   color: #000;
+}
+
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/golden_gate.jpg);
+  background-size: cover;
+  color: #fff;
+  height: 178px;;
+}
+
+.hero h1 {
+  margin-top: 0;
+}
+
+.dashboard-nav {
+  padding-left: 0;
+}
+
+.dashboard-nav li {
+  margin-top: 15px;
+  display: inline;
 }
 
 /* Big tablets to 1023px (width smaller than the 1140px row */

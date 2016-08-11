@@ -5,10 +5,133 @@
 </head>
 <body>
     <header>
-        <% include ./partials/header %>
+      <nav class="navbar navbar-default" role="navigation">
+          <div class="container">
+              <div class="navbar-header">
+                  <a class="navbar-brand" href="/">
+                      <img src="/images/cropped-halallogo.png" alt="">
+                  </a>
+              </div>
+              <ul class="nav navbar-nav navbar-right" id="user-login-big">
+                  <li id="hello-user"><a href="/profile"></a></li>
+                  <li class="logout"><a href="/">Logout</a></li>
+                  <li class="sign-in"><a href="/login">Login</a></li>
+              </ul>
+          </div>
+      </nav>
+      <nav class="navbar navbar-default secondary-nav-menu" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Browse Categories
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <div class="col-md-3">
+                  <li><a href="/categories">Restaurant</a></li>
+                  <li><a href="/categories">Buffet</a></li>
+                  <li><a href="/categories">Western</a></li>
+                  <li><a href="/categories">Frozen</a></li>
+                  <li><a href="/categories">Fine-dining</a></li>
+                  <li><a href="/categories">Coffeeshop</a></li>
+                  <li><a href="/categories">Fining</a></li>
+                  <li><a href="/categories">Fastfood</a></li>
+                  <li><a href="/categories">Cafe</a></li>
+                  <li><a href="/categories">Catering</a></li>
+                  <li><a href="/categories">Kiosk</a></li>
+                  <li><a href="/categories">Confectioery</a></li>
+                  <li><a href="/categories">Dessert</a></li>
+                  <li><a href="/categories">Casual Dining</a></li>
+                </div>
+              </ul>
+              <ul class="nav navbar-nav navbar-right" id="user-login-small">
+                  <li class="logout"><a href="/">Logout</a></li>
+                  <li class="sign-in"><a href="/login">Login</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="hero">
+        <h1 class="text-center">My Profile</h1>
+      </div>
+      <nav class="navbar navbar-default secondary-nav-menu" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <ul class="dashboard-nav">
+              <li style="list-style: none; margin: 20px 20px 20px 0;"><a href="" style="color: #000 !important"; margin-top: 10px;><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Add Listing</a></li>
+              <li style="list-style: none; margin: 20px 20px 20px 0;"><a href="" style="color: #000 !important"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Edit Listing</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
     <main>
-      <h1>This is a profile page</h1>
+      <div class="container" style="margin-top: 30px;">
+        <div class="panel panel-default">
+          <div class="panel-body greet">
+          </div>
+        </div>
+        <h2>Add Listing</h2>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <form action="" method="post" id="listingForm">
+              <div class="form-group">
+                <label for="listingName">Listing Name</label>
+                <input type="text" name="name" class="form-control" id="listingLocation" placeholder="Eg. ABC 24 hour Cafe">
+              </div>
+              <div class="form-group">
+                <label for="searchTextField">Location</label>
+                <input type="text" name="location" class="form-control" id="searchTextField" placeholder="Eg. 100 Main Street" autocomplete="on" runat="server" />
+                <input type="hidden" id="city2" name="city2" />
+                <input type="hidden" id="cityLat" name="cityLat" />
+                <input type="hidden" id="cityLng" name="cityLng" />
+              </div>
+              <div class="form-group">
+                <label for="listingUrl">Featured Image URL (Optional)</label>
+                <input type="text" name="featured_image" class="form-control" id="ListingUrl" placeholder="Image URL">
+              </div>
+              <div class="form-group">
+                <label for="listingDesc">Description</label>
+                <textarea class="form-control" name="decription" id="listingDesc" rows="5" placeholder="Enter your description"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="listingCat">Description</label>
+                <select id="listingCat" name="category" class="form-control">
+                  <option>buffet</option>
+                  <option>cafe</option>
+                  <option>confectionery</option>
+                  <option>restaurant</option>
+                  <option>frozen</option>
+                  <option>fine dining</option>
+                  <option>coffesshop</option>
+                  <option>fastfood</option>
+                  <option>catering</option>
+                  <option>kiosk</option>
+                  <option>dessert</option>
+                  <option>casual dining</option>
+                  <option>western</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="listingWebsite">Website (Optional)</label>
+                <input type="text" name="website" class="form-control" id="ListingWebsite" placeholder="Website URL">
+              </div>
+              <div class="form-group">
+                <label for="listingPhone">Phone (Optional)</label>
+                <input type="text" name="tel" class="form-control" id="ListingPhone" placeholder="Phone">
+              </div>
+              <div class="form-group">
+                <label for="listingAddress">Address (Optional)</label>
+                <input type="text" name="address" class="form-control" id="listingAddress" placeholder="Address">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
     </main>
     <footer>
         <% include ./partials/footer %>
