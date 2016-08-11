@@ -5,7 +5,7 @@ function listListings (req, res) {
     if (err) return res.status(404).json({message: 'Listings not found'})
     // rather than return all data which could be huge, we create a simplified array with only a couple of key fields
     var simplifiedList = []
-    for (let i = 0; i < listingsArray.length; ++i) {
+    for (var i = 0; i < listingsArray.length; ++i) {
       simplifiedList.push(
                         { id: listingsArray[i].id,
                           title: listingsArray[i].name,
