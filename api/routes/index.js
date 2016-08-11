@@ -31,13 +31,13 @@ router.get('/listings', listingController.index)
 router.get('/listings/:id', listingController.show)
 router.put('/listings/:id', listingController.update)
 router.post('/listings', listingController.create)
-router.delete('listings/:id', listingController.remove)
+router.delete('/listings/:id', listingController.remove)
 
 // Keep project routes in a seperate controller file
 router.get('/categories', categoryController.index)
 router.get('/categories/:id', categoryController.show)
 router.post('/categories', categoryController.create)
-router.delete('categories/:id', categoryController.remove)
+router.delete('/categories/:id', categoryController.remove)
 
 // Error handling
 router.get('/err', function (req, res, next) {
