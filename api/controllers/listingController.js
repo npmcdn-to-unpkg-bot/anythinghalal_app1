@@ -10,11 +10,14 @@ function listListings (req, res) {
                         { id: listingsArray[i].id,
                           title: listingsArray[i].name,
                           url: listingsArray[i].url,
-                          locacation: listingsArray[i].location,
+                          location: listingsArray[i].location,
                           featured_image: listingsArray[i].featured_image,
                           description: listingsArray[i].description,
                           categories: listingsArray[i].categories,
-                          contact: listingsArray[i].contact
+                          contact: listingsArray[i].contact,
+                          created_by: listingsArray[i].created_by,
+                          created_at: listingsArray[i].created_at,
+                          updated_at: listingsArray[i].updated_at
                         })
     }
     res.status(200).json(simplifiedList)

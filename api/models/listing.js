@@ -14,14 +14,15 @@ var ListingSchema = new Schema({
   },
   featured_image: String,
   description: String,
-  categories: [],
+  categories: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Category' }],
   contact: {
     address: String,
     tel: String,
-    website: String,
-    created_at: Date,
-    updated_at: Date
-  }
+    website: String
+  },
+  created_by: { type: String, ref: 'User' },
+  created_at: Date,
+  updated_at: Date
 })
 
 ListingSchema.pre('save', function (next) {

@@ -6,7 +6,8 @@ var UserSchema = new mongoose.Schema({
   name: String,
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  auth_token: { type: String, unique: true }
+  auth_token: { type: String, unique: true },
+  listings: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Listing' }]
 })
 
 UserSchema.pre('save', function (next) {
