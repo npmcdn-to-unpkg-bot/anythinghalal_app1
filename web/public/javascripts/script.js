@@ -7,8 +7,8 @@ var currentUser = window.localStorage.email || undefined
 
 function signin (formData) {
   $.ajax({
-    type: 'POST',
-    url: serverURL + 'signin',
+    type: 'GET',
+    url: serverURL + 'users',
     data: formData,
     success: function (response) {
       window.alert(response)
