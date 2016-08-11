@@ -1,5 +1,6 @@
 var express = require('express')
 var router = express.Router()
+var signInUpController = require('../../controllers/signInUpController')
 
 router.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*')
@@ -16,6 +17,10 @@ router.get('/', function (req, res, next) {
 router.get('/login', function (req, res) {
   res.render('login')
 })
+
+// ROUTING END POINTS TO THE APPROPRIATE FUNCTIONS
+router.post('/signup', signInUpController.signUp)
+router.post('/signin', signInUpController.signIn)
 
 router.get('/categories', function (req, res) {
   res.render('categories')
