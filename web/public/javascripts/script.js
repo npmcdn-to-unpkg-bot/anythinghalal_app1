@@ -2,7 +2,7 @@
 // console.clear()
 console.log('App.js is loaded')
 // global $
-var serverURL = 'https://anything-halal.herokuapp.com/api/'
+var serverURL = 'http://anything-halal.herokuapp.com/api/'
 var currentUser = window.localStorage.email || undefined
 
 function signin (formData) {
