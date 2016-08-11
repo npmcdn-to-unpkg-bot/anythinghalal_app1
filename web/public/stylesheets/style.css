@@ -134,6 +134,10 @@ h1, .h1 {
 
 /* Small phones to small tablets from 481 to 767px */
 @media only screen and (max-width: 767px) {
+  .navbar-brand img {
+    margin-left: 30%;
+  }
+
   #user-login-big {
     display: none;
   }
