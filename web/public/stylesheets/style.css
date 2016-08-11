@@ -49,34 +49,9 @@ a {
   background-color: #fff;
 }
 
-.dropdown-menu {
-  position: absolute;
-  top: 110%;
-  left: -70px;
-  z-index: 9999;
-  display: none;
-  float: left;
-  width: 100vw;
-  height: 244px;
-  padding: 5px 0;
-  margin: 2px 0 0;
-  font-size: 14px;
-  text-align: left;
-  list-style: none;
-  text-decoration: none !important;
-  background-color: #f8f8f8;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  border: 1px solid #fff;
-  border: 1px solid rgba(0,0,0,.15);
-  border-radius: 0px;
-  -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
-  box-shadow: 0 6px 12px rgba(0,0,0,.175);
-}
-
 .dropdown li {
-  margin-bottom: 50px;
   text-decoration: none;
+  margin-bottom: 10px;
 }
 
 .dropdown .btn-default:hover {
@@ -110,7 +85,7 @@ h1, .h1 {
   color: #fff;
 }
 
-.jumbotron .container {
+.jumbotron header {
   margin-top: 100px;
 }
 
@@ -137,4 +112,37 @@ h1, .h1 {
   width: 100%;
   height: 400px;
   margin-left: 0;
+}
+
+#user-login-small {
+  color: #000;
+}
+
+/* Big tablets to 1023px (width smaller than the 1140px row */
+@media only screen and (min-width: 1023px) {
+  #user-login-small {
+    display: none;
+  }
+}
+
+/* Small tablets to big tablets from 768 to 1023px */
+@media only screen and (max-width: 1023px) {
+  #user-login-small {
+    display: none;
+  }
+}
+
+/* Small phones to small tablets from 481 to 767px */
+@media only screen and (max-width: 767px) {
+  #user-login-big {
+    display: none;
+  }
+
+  .jumbotron header {
+    margin-top: 0px;
+  }
+
+  .jumbotron h1 {
+    font-size: 46px;
+  }
 }

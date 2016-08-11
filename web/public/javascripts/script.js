@@ -58,8 +58,8 @@ $(function () {
   })
 
   console.log(currentUser)
-  if (currentUser !== undefined || '') $('#sign-in').remove()
-  if (currentUser === undefined || '') $('#logout').remove()
+  if (currentUser !== undefined || '') $('.sign-in').remove()
+  if (currentUser === undefined || '') $('.logout').remove()
   $('#hello-user a').html('Hello, ' + currentUser)
   // $('#user-name').html('Welcome ' + window.localStorage.email)
   // $('#user-stats').html('Your auth_token: ' + window.localStorage.auth_token)
