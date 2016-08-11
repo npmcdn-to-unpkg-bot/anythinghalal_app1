@@ -1,8 +1,9 @@
+/* global $ */
 // console.clear()
 console.log('App.js is loaded')
 // global $
 var serverURL = 'https://anything-halal.herokuapp.com//'
-var currentUser = window.localStorage.email
+var currentUser = window.localStorage.email || undefined
 
 function signin (formData) {
   $.ajax({
@@ -29,9 +30,9 @@ function signin (formData) {
   })
 }
 
-console.log('hi')
 // check for user auth
 $(function () {
+  console.log('jQuery is alive!!')
   // if (!window.localStorage['email'] || !window.localStorage['auth_token']) loadUser()
   // globals $ currentUser //
   console.log('Hello ' + currentUser)
@@ -54,9 +55,9 @@ $(function () {
   })
 
   console.log(currentUser)
-  if (currentUser !== undefined) $('#sign-in, #sign-up').remove()
-  if (currentUser === undefined) $('#logout, #add-article').remove()
-  $('#hello-user a').html('Hello, ' + currentUser)
-  $('#user-name').html('Welcome ' + window.localStorage.email)
-  $('#user-stats').html('Your auth_token: ' + window.localStorage.auth_token)
+  // if (currentUser !== undefined) $('#sign-in, #sign-up').remove()
+  // if (currentUser === undefined) $('#logout, #add-article').remove()
+  // $('#hello-user a').html('Hello, ' + currentUser)
+  // $('#user-name').html('Welcome ' + window.localStorage.email)
+  // $('#user-stats').html('Your auth_token: ' + window.localStorage.auth_token)
 })
