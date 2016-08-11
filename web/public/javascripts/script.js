@@ -11,9 +11,7 @@ function signin (formData) {
     url: serverURL + 'signin',
     data: formData,
     success: function (response) {
-      window.alert(response)
-      console.log(response.user._id)
-      console.log(response.user.auth_token)
+      window.alert(response.message)
       // success save the repsonse
       window.localStorage.id = response.user._id
       window.localStorage.email = $('#inputEmail2').val()
@@ -46,7 +44,7 @@ $(function () {
   })
 
   // logout users
-  $('#logout').click(function (event) {
+  $('.logout').click(function (event) {
     event.preventDefault()
     // window.locationStorage.removeItem('id')
     window.localStorage.removeItem('email')
@@ -60,7 +58,9 @@ $(function () {
   console.log(currentUser)
   if (currentUser !== undefined || '') $('.sign-in').remove()
   if (currentUser === undefined || '') $('.logout').remove()
-  $('#hello-user a').html('Hello, ' + currentUser)
+  if (currentUser !== undefined || '') {
+    $('#hello-user a').html('Hello, ' + currentUser)
+  }
   // $('#user-name').html('Welcome ' + window.localStorage.email)
   // $('#user-stats').html('Your auth_token: ' + window.localStorage.auth_token)
 })

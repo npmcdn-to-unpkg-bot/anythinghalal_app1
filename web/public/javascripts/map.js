@@ -31,10 +31,10 @@ $(document).ready(function () {
   //  DEFINE FUNCTION FOR VISUALISING DATA RETURNED FROM AJAX CALL
   function visualiseData (data) {
     for (var i = 0; i < data.length; i++) {
-      var lat = data[i].locacation.latitude
-      var lon = data[i].locacation.longitude
+      var lat = data[i].location.latitude
+      var lon = data[i].location.longitude
       var circle = L.marker([lat, lon], 200, {
-        fillColor: '#09AD83',
+        fillColor: '#16A085',
         fillOpacity: 0.8,
         stroke: false
       })

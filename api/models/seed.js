@@ -181,7 +181,7 @@ var data = [
     'model': 'User',
     'documents': [
       {
-        username: 'yazid',
+        name: 'yazid',
         email: 'flight846@gmail.com',
         password: 'rvf40046',
         listings: []

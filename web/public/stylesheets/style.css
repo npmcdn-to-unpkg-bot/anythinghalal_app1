@@ -49,6 +49,10 @@ a {
   background-color: #fff;
 }
 
+.dropdown {
+  z-index: 9999;
+}
+
 .dropdown li {
   text-decoration: none;
   margin-bottom: 10px;
@@ -104,8 +108,43 @@ h1, .h1 {
   color: #fff;
 }
 
-#grid-row-1 {
+.grid-row-1 {
   margin-top: 50px;
+}
+
+#cafe {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/cafe.jpeg);
+  background-size: cover;
+  color: #fff;
+  height: 250px;
+}
+
+#fine-dining {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/Halal-Fine-Dining.jpg);
+  background-size: cover;
+  color: #fff;
+  height: 250px;
+}
+
+#catering{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/Halal-Catering.jpg);
+  background-size: cover;
+  color: #fff;
+  height: 250px;
+}
+
+#coffeeshop{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/halal-coffeeshop.jpg);
+  background-size: cover;
+  color: #fff;
+  height: 250px;
+}
+
+#fastfood{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/halal_burpple_fastfood.jpg);
+  background-size: cover;
+  color: #fff;
+  height: 250px;
 }
 
 #mapid {
