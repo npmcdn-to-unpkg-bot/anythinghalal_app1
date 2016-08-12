@@ -37,6 +37,8 @@ function showListing (req, res) {
 
 function createListing (req, res) {
   var listing = new Listing(req.body)
+  console.log(req.body)
+  console.log(req)
   listing.save((err, listing) => {
     if (err) return res.status(401).json({error: 'Listing save Error'})
     res.status(200).json({message: 'Listing created! yay! ', listing})
