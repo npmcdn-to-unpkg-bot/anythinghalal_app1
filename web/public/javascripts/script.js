@@ -50,6 +50,7 @@ function submitListing (formData) {
     url: serverURL + 'listings',
     data: formData,
     success: function (response) {
+      console.log(formData)
       window.alert(response.message)
       // success save the repsonse
       // then redirect
