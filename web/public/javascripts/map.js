@@ -31,14 +31,14 @@ $(document).ready(function () {
   //  DEFINE FUNCTION FOR VISUALISING DATA RETURNED FROM AJAX CALL
   function visualiseData (data) {
     for (var i = 0; i < data.length; i++) {
-      var lat = data[i].location.latitude
-      var lon = data[i].location.longitude
+      var lat = data[i].latitude
+      var lon = data[i].longitude
       var circle = L.marker([lat, lon], 200, {
         fillColor: '#16A085',
         fillOpacity: 0.8,
         stroke: false
       })
-      circle.bindPopup(data[i].title)
+      circle.bindPopup(data[i].name)
       circlesGroup.addLayer(circle)
     }
   }
