@@ -7,7 +7,7 @@ function listCategories (req, res) {
     // rather than return all data which could be huge, we create a simplified array with only a couple of key fields
     var simplifiedList = []
     for (var i = 0; i < categoriesArray.length; ++i) {
-      simplifiedList.push({id: categoriesArray[i].id, skill: categoriesArray[i].category})
+      simplifiedList.push({id: categoriesArray[i].id, categories: categoriesArray[i].category})
     }
     res.status(200).json(simplifiedList)
   })

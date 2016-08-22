@@ -66,6 +66,21 @@ function submitListing (formData) {
   })
 }
 
+function showListings () {
+  $.ajax({
+    url: 'https://anything-halal.herokuapp.com/api/listings/',
+    // url: 'http://localhost:3000/api',
+    type: 'GET',
+    success: function (data) {
+      data.forEach(function (datum) {
+        $('#categories').append('<div class="col-md-6"><div class="panel panel-default" ><div class="panel-body" id="cafe"><h3 class="text-center" style="margin-top: 110px;">' + datum.name + '</h3><small>' + datum.address + '</small></div></div></div>')
+      })
+    }
+  })
+}
+
+// <li class="list-group-item"><a href="' + datum.html_url + '" target="_blank">' + datum.name + '</li>
+
 // check for user auth
 $(function () {
   console.log('jQuery is alive!!')
@@ -108,4 +123,5 @@ $(function () {
   }
   // $('#user-name').html('Welcome ' + window.localStorage.email)
   // $('#user-stats').html('Your auth_token: ' + window.localStorage.auth_token)
+  showListings()
 })
