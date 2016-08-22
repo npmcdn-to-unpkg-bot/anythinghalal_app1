@@ -38,7 +38,9 @@ $(document).ready(function () {
         fillOpacity: 0.8,
         stroke: false
       })
-      circle.bindPopup(data[i].name)
+      circle.bindPopup('<b>' + data[i].name + '</b><br>' + data[i].description + '')
+      // circle.bindPopup(data[i].name)
+      // circle.bindPopup(data[i].description)
       circlesGroup.addLayer(circle)
     }
   }
