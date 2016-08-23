@@ -73,7 +73,7 @@ function showListings () {
     type: 'GET',
     success: function (data) {
       data.forEach(function (datum) {
-        $('#categories').append('<div class="col-md-6"><div class="panel panel-default" ><div class="panel-body" id="cafe"><h3 class="text-center" style="margin-top: 110px;">' + datum.name + '</h3><small>' + datum.address + '</small></div></div></div>')
+        $('#categories').append('<div class="col-md-6"><div class="panel panel-default" ><div class="panel-body" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(' + datum.featured_image + ');background-size: cover;color: #fff;height: 250px;"><h3 class="text-center" style="margin-top: 110px;">' + datum.name + '</h3><small>' + datum.address + '</small></div></div></div>')
       })
     }
   })
